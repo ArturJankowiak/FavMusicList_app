@@ -1,14 +1,21 @@
-<form
- (ngSubmit)="onSubmitForm()" 
- [formGroup]="formAlbum" 
- class="px-5">
-    <div class="form-group">
-      <label for="author">Author</label>
-      <input class="form-control" id="author" type="text" formControlName="author">
-    </div>
-    <div class="form-group">
-      <label for="title">Tittle</label>
-      <input class="form-control"  id="title" type="text" formControlName="title">
-    </div>
-    <button class="btn btn-primary" type="submit">Save</button>
-  </form>
+<form (ngSubmit)="onSubmitForm()" [formGroup]="formAlbum" class="px-5">
+  <div class="form-group">
+    <label for="author">Author</label>
+    <input
+      class="form-control"
+      id="author"
+      type="text"
+      formControlName="author"
+    />
+  </div>
+  <div class="form-group">
+    <label for="title">Tittle</label>
+    <input
+      class="form-control"
+      id="title"
+      type="text"
+      formControlName="title"
+    />
+  </div>
+  <button class="btn btn-primary" type="submit">Save</button>
+</form>

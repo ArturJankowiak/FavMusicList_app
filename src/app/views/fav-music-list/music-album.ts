@@ -1,5 +1,5 @@
 export interface MusicAlbum {
-  id: number;
+  id: string;
   author: string;
   title: string;
   isFavorite: boolean;

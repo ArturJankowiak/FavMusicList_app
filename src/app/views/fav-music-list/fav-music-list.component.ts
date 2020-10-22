@@ -6,14 +6,12 @@ import { MusicAlbum } from './music-album';
 @Component({
   selector: 'app-fav-music-list',
   templateUrl: './fav-music-list.component.html',
-  styleUrls: ['./fav-music-list.component.css']
+  styleUrls: ['./fav-music-list.component.css'],
 })
 export class FavMusicListComponent implements OnInit {
   albums$: Observable<MusicAlbum[]>;
 
-  constructor(private db: DataBaseService) {
-    
-   }
+  constructor(private db: DataBaseService) {}
 
   ngOnInit(): void {
     this.load();
@@ -23,15 +21,13 @@ export class FavMusicListComponent implements OnInit {
     this.albums$ = this.db.getAlbums();
   }
 
-  onEdit(id: number): void {
+  onEdit(id: number): void {}
 
-  }
-
-  onFavorite(id: number): void {
+  onFavorite(id: string): void {
     this.db.markAsFavorite(id);
   }
 
-  onDelete(id: number): void {
+  onDelete(id: string): void {
     this.db.deleteAlbum(id);
   }
 }

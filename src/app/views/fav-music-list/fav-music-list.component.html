@@ -1,44 +1,46 @@
 <table class="table">
-    <thead>
+  <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">Title</th>
       <th scope="col">Author</th>
     </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let album of albums$ | async; let i = index" [ngClass]="{'table-primary': album.isFavorite}">
-      <th scope="row">{{i + 1}}</th>
-      <td>{{album.title}}</td>
-      <td>{{album.author}}</td>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="let album of albums$ | async; let i = index"
+      [ngClass]="{ 'table-primary': album.isFavorite }"
+    >
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ album.title }}</td>
+      <td>{{ album.author }}</td>
       <td>
         <button
-         class="btn btn-outline-dark" 
-         routerLink="/edit/{{album.id}}" 
-         type="button"
-         >
-         Edit
+          class="btn btn-outline-dark"
+          routerLink="/edit/{{ album.id }}"
+          type="button"
+        >
+          Edit
         </button>
       </td>
       <td>
         <button
-         (click)="onFavorite(album.id)" 
-         class="btn btn-outline-danger" 
-         type="button"
-         >
-         Best of the best
+          (click)="onFavorite(album.id)"
+          class="btn btn-outline-danger"
+          type="button"
+        >
+          Best of the best
         </button>
       </td>
       <td>
         <button
-         (click)="onDelete(album.id)" 
-         class="btn btn-outline-danger" 
-         type="button"
-         >
-         Delete
+          (click)="onDelete(album.id)"
+          class="btn btn-outline-danger"
+          type="button"
+        >
+          Delete
         </button>
       </td>
     </tr>
-    </tbody>
-  </table>
-  
+  </tbody>
+</table>
